@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:roamcat_flutter/data/bloc/locale_bloc.dart';
+import 'package:roamcat_flutter/data/bloc/theme_bloc.dart';
+import 'package:roamcat_flutter/data/helper/app_constants.dart';
+import 'package:roamcat_flutter/data/helper/app_data_helper.dart';
 import 'package:roamcat_flutter/view/router.dart';
 import 'package:roamcat_flutter/view/widget/no_ripple_scroll_behavior.dart';
 
@@ -23,7 +28,17 @@ class _MainTabPageState extends State<MainTabPage> {
   ];
   DateTime _lastPressed;
 
+  ThemeBloc _themeBloc;
+  LocaleBloc _localeBloc;
+
   _MainTabPageState(this._selectedIndex, this._pageController);
+
+  @override
+  void initState() {
+    super.initState();
+    _themeBloc = context.bloc<ThemeBloc>();
+    _localeBloc = context.bloc<LocaleBloc>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +51,12 @@ class _MainTabPageState extends State<MainTabPage> {
               List<PopupMenuEntry<int>> list = [];
               list.add(
                   PopupMenuItem(value: 1, child: Text("View the source code")));
+              list.add(PopupMenuItem(value: 2, child: Text("Switch DarkMode")));
+              list.add(
+                  PopupMenuItem(value: 3, child: Text("Switch ThemeColor")));
+              list.add(PopupMenuItem(value: 4, child: Text("Switch Font")));
+              list.add(PopupMenuItem(value: 5, child: Text("Switch Locale")));
+              list.add(PopupMenuItem(value: 6, child: Text("Reset Theme")));
               return list;
             },
             onSelected: (tag) async {
@@ -47,6 +68,27 @@ class _MainTabPageState extends State<MainTabPage> {
                     'url': 'https://github.com/guangGG/RoamCatFlutter'
                   },
                 );
+              } else if (tag == 2) {
+                _themeBloc?.add(DarkModeThemeEvent(
+                    userDarkMode: !AppDataHelper.userDarkMode));
+              } else if (tag == 3) {
+                _themeBloc?.add(ColorThemeEvent(
+                    themeColorIndex: AppDataHelper.nextIndex(
+                        AppConstants.colorValueList,
+                        AppDataHelper.themeColorIndex)));
+              } else if (tag == 4) {
+                _themeBloc?.add(FontThemeEvent(
+                    fontIndex: AppDataHelper.nextIndex(
+                        AppConstants.fontValueList, AppDataHelper.fontIndex)));
+              } else if (tag == 5) {
+                _localeBloc?.add(DefaultLocaleEvent(
+                    localeValueIndex: AppDataHelper.nextIndex(
+                        AppConstants.localeValueList,
+                        AppDataHelper.localeValueIndex)));
+              } else if (tag == 6) {
+                _themeBloc?.add(DefaultThemeEvent(
+                    userDarkMode: false, themeColorIndex: 0, fontIndex: 0));
+                _localeBloc?.add(DefaultLocaleEvent(localeValueIndex: 0));
               }
             },
           )
