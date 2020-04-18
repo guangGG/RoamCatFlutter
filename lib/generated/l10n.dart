@@ -225,6 +225,60 @@ class S {
     );
   }
 
+  String get showInfo {
+    return Intl.message(
+      'Info',
+      name: 'showInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get clipboard {
+    return Intl.message(
+      'Clipboard',
+      name: 'clipboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get copy {
+    return Intl.message(
+      'Copy',
+      name: 'copy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get paste {
+    return Intl.message(
+      'Paste',
+      name: 'paste',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get deviceInfo {
+    return Intl.message(
+      'DeviceInfo',
+      name: 'deviceInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get dealOpt {
+    return Intl.message(
+      'DealOption',
+      name: 'dealOpt',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get exitApp {
     return Intl.message(
       'Exit App',
@@ -238,6 +292,15 @@ class S {
     return Intl.message(
       'This feature requires permission to be granted before it can be used',
       name: 'noPermissionTips',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get pluginTag {
+    return Intl.message(
+      'Plugin',
+      name: 'pluginTag',
       desc: '',
       args: [],
     );

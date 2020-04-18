@@ -8,6 +8,7 @@ import 'package:roamcat_flutter/data/helper/app_constants.dart';
 import 'package:roamcat_flutter/data/helper/app_data_helper.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/view/page/main_tab_home.dart';
+import 'package:roamcat_flutter/view/page/main_tab_hot_action.dart';
 import 'package:roamcat_flutter/view/router.dart';
 import 'package:roamcat_flutter/view/widget/no_ripple_scroll_behavior.dart';
 
@@ -27,7 +28,7 @@ class _MainTabPageState extends State<MainTabPage> {
   int _selectedIndex = 0;
   List<Widget> pages = <Widget>[
     Center(child: MainTabHome()),
-    Center(child: Text("Mine Content")),
+    Center(child: MainTabHotAction()),
   ];
   DateTime _lastPressed;
 

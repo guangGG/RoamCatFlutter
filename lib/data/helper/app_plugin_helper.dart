@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -85,47 +86,49 @@ class AppPluginHelper {
           }
         },
       ));
-      // todo demos
-      list.add(AppPlugin('tag', _demoName, Icons.ac_unit, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.access_alarms, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.account_balance, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.beach_access, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.blur_circular, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.bug_report, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.camera, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.camera_roll, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.delete_outline, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.directions_bike, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.directions_car, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.cast_connected, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.gamepad, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.device_hub, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.dashboard, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.directions_run, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.edit, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.explore, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.equalizer, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.hourglass_empty, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.contact_phone, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.child_care, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.face, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.favorite, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.filter_frames, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.gavel, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.group, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.group_work, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.grade, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.headset, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.home, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.star_half, _demoPress));
-      list.add(AppPlugin('tag', _demoName, Icons.import_export, _demoPress));
+      // demos
+      if (!kReleaseMode) {
+        list.add(AppPlugin('tag', _demoName, Icons.ac_unit, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.access_alarms, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.accessibility, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.beach_access, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.blur_circular, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.bug_report, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.camera, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.camera_roll, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.delete_outline, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.details, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.directions_car, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.cast_connected, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.gamepad, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.device_hub, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.dashboard, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.directions_run, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.edit, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.explore, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.equalizer, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.event_seat, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.contact_phone, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.child_care, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.face, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.favorite, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.filter_frames, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.gavel, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.group, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.group_work, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.grade, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.headset, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.home, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.star_half, _demoPress));
+        list.add(AppPlugin('tag', _demoName, Icons.import_export, _demoPress));
+      }
       pluginList = list;
     }
     return pluginList;
   }
 
   static String _demoName(BuildContext context) {
-    return 'Plugin';
+    return S.of(context).pluginTag;
   }
 
   static void _demoPress(bool longPress) {
