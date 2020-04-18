@@ -5,17 +5,16 @@ class AppConstants {
   static const List<String> fontValueList = ['system', 'happyfont'];
   static const List<MaterialColor> colorValueList = [
     Colors.blue,
+    Colors.green,
+    Colors.brown,
     Colors.purple,
     Colors.red,
-    Colors.orange,
-    Colors.yellow,
-    Colors.green,
-    Colors.cyan,
-    Colors.amber,
-    Colors.brown,
-    Colors.lime,
     Colors.pink,
-    Colors.teal,
-    Colors.grey,
+    Colors.lightBlue,
+    Colors.cyan,
+    Colors.lime,
+    Colors.yellow,
+    Colors.amber,
+    Colors.orange,
   ];
 }

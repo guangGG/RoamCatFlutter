@@ -9,5 +9,17 @@
   "urlEmptyTips": "Url不能为空",
   "openInBrowser": "浏览器中打开",
   "reloadPage": "刷新页面",
-  "closePage": "关闭页面"
+  "closePage": "关闭页面",
+  "drawerMsg": "生命如一条河流，淙淙不断地向前奔流。两岸是阴晴寒暑，四时不同的景色。我们一方面要克服阻力，向前奔赴；一方面更不要忘记两岸各种景色都值得我们欣赏与品赏。",
+  "aboutUs": "关于我们",
+  "blackTheme": "黑夜模式",
+  "switchThemeColor": "切换主题颜色",
+  "switchFont": "切换字体",
+  "fontDefault": "默认字体",
+  "fontHappy": "快乐字体",
+  "switchLanguage": "切换语言",
+  "languageNone": "跟随系统",
+  "languageZh": "简体中文",
+  "languageEn": "English",
+  "exitApp": "退出应用"
 }

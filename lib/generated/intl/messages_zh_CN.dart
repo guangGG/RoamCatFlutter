@@ -21,16 +21,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "aboutUs" : MessageLookupByLibrary.simpleMessage("关于我们"),
     "appName" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
+    "blackTheme" : MessageLookupByLibrary.simpleMessage("黑夜模式"),
     "closePage" : MessageLookupByLibrary.simpleMessage("关闭页面"),
+    "drawerMsg" : MessageLookupByLibrary.simpleMessage("生命如一条河流，淙淙不断地向前奔流。两岸是阴晴寒暑，四时不同的景色。我们一方面要克服阻力，向前奔赴；一方面更不要忘记两岸各种景色都值得我们欣赏与品赏。"),
+    "exitApp" : MessageLookupByLibrary.simpleMessage("退出应用"),
+    "fontDefault" : MessageLookupByLibrary.simpleMessage("默认字体"),
+    "fontHappy" : MessageLookupByLibrary.simpleMessage("快乐字体"),
     "hotTabName" : MessageLookupByLibrary.simpleMessage("便捷操作"),
     "hotTabTitle" : MessageLookupByLibrary.simpleMessage("便捷操作"),
+    "languageEn" : MessageLookupByLibrary.simpleMessage("English"),
+    "languageNone" : MessageLookupByLibrary.simpleMessage("跟随系统"),
+    "languageZh" : MessageLookupByLibrary.simpleMessage("简体中文"),
     "mainPageName" : MessageLookupByLibrary.simpleMessage("主页"),
     "mainPageTitle" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "openInBrowser" : MessageLookupByLibrary.simpleMessage("浏览器中打开"),
     "reClickExit" : MessageLookupByLibrary.simpleMessage("再次点击退出应用"),
     "reloadPage" : MessageLookupByLibrary.simpleMessage("刷新页面"),
     "splashText" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
+    "switchFont" : MessageLookupByLibrary.simpleMessage("切换字体"),
+    "switchLanguage" : MessageLookupByLibrary.simpleMessage("切换语言"),
+    "switchThemeColor" : MessageLookupByLibrary.simpleMessage("切换主题颜色"),
     "urlEmptyTips" : MessageLookupByLibrary.simpleMessage("Url不能为空")
   };
 }

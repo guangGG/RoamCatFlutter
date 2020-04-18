@@ -21,16 +21,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "aboutUs" : MessageLookupByLibrary.simpleMessage("About Us"),
     "appName" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
+    "blackTheme" : MessageLookupByLibrary.simpleMessage("Dark mode"),
     "closePage" : MessageLookupByLibrary.simpleMessage("Close Page"),
+    "drawerMsg" : MessageLookupByLibrary.simpleMessage("Life is like a river, running forward continuously. The two sides of the river have four different views. On the one hand, we should overcome the resistance and move forward; on the other hand, we should not forget that all kinds of scenery on both sides of the Straits are worth our appreciation and taste."),
+    "exitApp" : MessageLookupByLibrary.simpleMessage("Exit App"),
+    "fontDefault" : MessageLookupByLibrary.simpleMessage("Default"),
+    "fontHappy" : MessageLookupByLibrary.simpleMessage("Happy"),
     "hotTabName" : MessageLookupByLibrary.simpleMessage("HotAction"),
     "hotTabTitle" : MessageLookupByLibrary.simpleMessage("HotAction"),
+    "languageEn" : MessageLookupByLibrary.simpleMessage("English"),
+    "languageNone" : MessageLookupByLibrary.simpleMessage("System"),
+    "languageZh" : MessageLookupByLibrary.simpleMessage("简体中文"),
     "mainPageName" : MessageLookupByLibrary.simpleMessage("Home"),
     "mainPageTitle" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "openInBrowser" : MessageLookupByLibrary.simpleMessage("Open In Browser"),
     "reClickExit" : MessageLookupByLibrary.simpleMessage("Click again to exit the application"),
     "reloadPage" : MessageLookupByLibrary.simpleMessage("Reload Page"),
     "splashText" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
+    "switchFont" : MessageLookupByLibrary.simpleMessage("Text Font"),
+    "switchLanguage" : MessageLookupByLibrary.simpleMessage("Language"),
+    "switchThemeColor" : MessageLookupByLibrary.simpleMessage("Theme color"),
     "urlEmptyTips" : MessageLookupByLibrary.simpleMessage("Url cannot be empty")
   };
 }

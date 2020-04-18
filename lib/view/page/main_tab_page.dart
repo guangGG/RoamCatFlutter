@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:roamcat_flutter/data/bloc/locale_bloc.dart';
@@ -53,45 +54,12 @@ class _MainTabPageState extends State<MainTabPage> {
             itemBuilder: (BuildContext context) {
               List<PopupMenuEntry<int>> list = [];
               list.add(
-                  PopupMenuItem(value: 1, child: Text("View the source code")));
-              list.add(PopupMenuItem(value: 2, child: Text("Switch DarkMode")));
-              list.add(
-                  PopupMenuItem(value: 3, child: Text("Switch ThemeColor")));
-              list.add(PopupMenuItem(value: 4, child: Text("Switch Font")));
-              list.add(PopupMenuItem(value: 5, child: Text("Switch Locale")));
-              list.add(PopupMenuItem(value: 6, child: Text("Reset Theme")));
+                  PopupMenuItem(value: 1, child: Text(S.of(context).exitApp)));
               return list;
             },
             onSelected: (tag) async {
               if (tag == 1) {
-                //内置WebView打开url
-                Navigator.of(context).pushNamed(
-                  RouteName.webPage,
-                  arguments: {
-                    'url': 'https://github.com/guangGG/RoamCatFlutter'
-                  },
-                );
-              } else if (tag == 2) {
-                _themeBloc?.add(DarkModeThemeEvent(
-                    userDarkMode: !AppDataHelper.userDarkMode));
-              } else if (tag == 3) {
-                _themeBloc?.add(ColorThemeEvent(
-                    themeColorIndex: AppDataHelper.nextIndex(
-                        AppConstants.colorValueList,
-                        AppDataHelper.themeColorIndex)));
-              } else if (tag == 4) {
-                _themeBloc?.add(FontThemeEvent(
-                    fontIndex: AppDataHelper.nextIndex(
-                        AppConstants.fontValueList, AppDataHelper.fontIndex)));
-              } else if (tag == 5) {
-                _localeBloc?.add(DefaultLocaleEvent(
-                    localeValueIndex: AppDataHelper.nextIndex(
-                        AppConstants.localeValueList,
-                        AppDataHelper.localeValueIndex)));
-              } else if (tag == 6) {
-                _themeBloc?.add(DefaultThemeEvent(
-                    userDarkMode: false, themeColorIndex: 0, fontIndex: 0));
-                _localeBloc?.add(DefaultLocaleEvent(localeValueIndex: 0));
+                SystemNavigator.pop(animated: true);
               }
             },
           )
@@ -105,7 +73,15 @@ class _MainTabPageState extends State<MainTabPage> {
             automaticallyImplyLeading: false,
             title: Text(S.of(context).appName),
           ),
-          body: Center(child: Text("Drawer Content")),
+          body: BlocBuilder<ThemeBloc, ThemeState>(
+            builder: (context, themeState) {
+              return BlocBuilder<LocaleBloc, LocaleState>(
+                builder: (context, localeState) {
+                  return _buildDrawerContent(context, themeState, localeState);
+                },
+              );
+            },
+          ),
         ),
       ),
       drawerEdgeDragWidth: 0,
@@ -187,5 +163,132 @@ class _MainTabPageState extends State<MainTabPage> {
       height: 25,
       color: color,
     );
+  }
+
+  Widget _buildDrawerContent(
+      BuildContext context, ThemeState themeState, LocaleState localeState) {
+    return buildNoRippleScrollWidget(ListView(
+      children: <Widget>[
+        Container(height: 15),
+        Image.asset(
+          "assets/images/icon_logo.png",
+          width: 150,
+          height: 150,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 20),
+          child: Center(
+            child: Text(
+              S.of(context).drawerMsg,
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
+        ),
+        ListTile(
+          title: Text(S.of(context).blackTheme),
+          trailing: Switch(
+            activeColor: Theme.of(context).accentColor,
+            value: themeState.userDarkMode,
+            onChanged: (b) {
+              _themeBloc?.add(DarkModeThemeEvent(userDarkMode: b));
+            },
+          ),
+        ),
+        ListTile(
+          title: Text(S.of(context).switchThemeColor),
+          subtitle: Container(
+            margin: EdgeInsets.only(top: 10),
+            child: GridView.builder(
+              shrinkWrap: true,
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
+              itemCount: AppConstants.colorValueList.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  child: Container(color: AppConstants.colorValueList[index]),
+                  onTap: () {
+                    _themeBloc?.add(ColorThemeEvent(themeColorIndex: index));
+                  },
+                );
+              },
+            ),
+          ),
+        ),
+        ListTile(
+          title: Text(S.of(context).switchFont),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(AppDataHelper.getFontName(context, themeState.fontIndex),
+                  style: TextStyle(fontSize: 12)),
+              Container(width: 5),
+              Icon(Icons.arrow_forward_ios, size: 16),
+            ],
+          ),
+          onTap: () {
+            _themeBloc?.add(FontThemeEvent(
+                fontIndex: AppDataHelper.nextIndex(
+                    AppConstants.fontValueList, AppDataHelper.fontIndex)));
+          },
+        ),
+        ListTile(
+          title: Text(S.of(context).switchLanguage),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                  AppDataHelper.getLanguageName(
+                      context, localeState.localeValue),
+                  style: TextStyle(fontSize: 12)),
+              Container(width: 5),
+              Icon(Icons.arrow_forward_ios, size: 16),
+            ],
+          ),
+          onTap: () async {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return new SimpleDialog(
+                  title: new Text(S.of(context).switchLanguage),
+                  children: <Widget>[
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: AppConstants.localeValueList.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: Text(AppDataHelper.getLanguageName(
+                              context, AppConstants.localeValueList[index])),
+                          trailing: (localeState.localeValue ==
+                                  AppConstants.localeValueList[index])
+                              ? Icon(Icons.radio_button_checked)
+                              : Icon(Icons.radio_button_unchecked),
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            _localeBloc?.add(
+                                DefaultLocaleEvent(localeValueIndex: index));
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                );
+              },
+            );
+          },
+        ),
+        ListTile(
+          title: Text(S.of(context).aboutUs),
+          trailing: Icon(Icons.arrow_forward_ios, size: 16),
+          onTap: () {
+            //内置WebView打开url
+            Navigator.of(context).pushNamed(
+              RouteName.webPage,
+              arguments: {'url': 'https://github.com/guangGG/RoamCatFlutter'},
+            );
+          },
+        ),
+        Container(height: 15),
+      ],
+    ));
   }
 }

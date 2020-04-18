@@ -125,6 +125,114 @@ class S {
       args: [],
     );
   }
+
+  String get drawerMsg {
+    return Intl.message(
+      'Life is like a river, running forward continuously. The two sides of the river have four different views. On the one hand, we should overcome the resistance and move forward; on the other hand, we should not forget that all kinds of scenery on both sides of the Straits are worth our appreciation and taste.',
+      name: 'drawerMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get aboutUs {
+    return Intl.message(
+      'About Us',
+      name: 'aboutUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get blackTheme {
+    return Intl.message(
+      'Dark mode',
+      name: 'blackTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get switchThemeColor {
+    return Intl.message(
+      'Theme color',
+      name: 'switchThemeColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get switchFont {
+    return Intl.message(
+      'Text Font',
+      name: 'switchFont',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get fontDefault {
+    return Intl.message(
+      'Default',
+      name: 'fontDefault',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get fontHappy {
+    return Intl.message(
+      'Happy',
+      name: 'fontHappy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get switchLanguage {
+    return Intl.message(
+      'Language',
+      name: 'switchLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get languageNone {
+    return Intl.message(
+      'System',
+      name: 'languageNone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get languageZh {
+    return Intl.message(
+      '简体中文',
+      name: 'languageZh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get languageEn {
+    return Intl.message(
+      'English',
+      name: 'languageEn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get exitApp {
+    return Intl.message(
+      'Exit App',
+      name: 'exitApp',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

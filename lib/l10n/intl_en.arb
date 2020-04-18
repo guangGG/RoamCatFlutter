@@ -9,5 +9,17 @@
   "urlEmptyTips": "Url cannot be empty",
   "openInBrowser": "Open In Browser",
   "reloadPage": "Reload Page",
-  "closePage": "Close Page"
+  "closePage": "Close Page",
+  "drawerMsg": "Life is like a river, running forward continuously. The two sides of the river have four different views. On the one hand, we should overcome the resistance and move forward; on the other hand, we should not forget that all kinds of scenery on both sides of the Straits are worth our appreciation and taste.",
+  "aboutUs": "About Us",
+  "blackTheme": "Dark mode",
+  "switchThemeColor": "Theme color",
+  "switchFont": "Text Font",
+  "fontDefault": "Default",
+  "fontHappy": "Happy",
+  "switchLanguage": "Language",
+  "languageNone": "System",
+  "languageZh": "简体中文",
+  "languageEn": "English",
+  "exitApp": "Exit App"
 }
