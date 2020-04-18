@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "languageZh" : MessageLookupByLibrary.simpleMessage("简体中文"),
     "mainPageName" : MessageLookupByLibrary.simpleMessage("主页"),
     "mainPageTitle" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
+    "noPermissionTips" : MessageLookupByLibrary.simpleMessage("该功能需要授予相关权限后才能使用"),
     "openInBrowser" : MessageLookupByLibrary.simpleMessage("浏览器中打开"),
     "pluginBookReader" : MessageLookupByLibrary.simpleMessage("读书"),
     "pluginBrowser" : MessageLookupByLibrary.simpleMessage("浏览器"),

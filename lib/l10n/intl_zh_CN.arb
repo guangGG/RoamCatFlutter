@@ -22,6 +22,7 @@
   "languageZh": "简体中文",
   "languageEn": "English",
   "exitApp": "退出应用",
+  "noPermissionTips": "该功能需要授予相关权限后才能使用",
   "pluginBrowser": "浏览器",
   "pluginSkyStar": "星空",
   "pluginBookReader": "读书",

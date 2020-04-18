@@ -234,6 +234,15 @@ class S {
     );
   }
 
+  String get noPermissionTips {
+    return Intl.message(
+      'This feature requires permission to be granted before it can be used',
+      name: 'noPermissionTips',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get pluginBrowser {
     return Intl.message(
       'Browser',

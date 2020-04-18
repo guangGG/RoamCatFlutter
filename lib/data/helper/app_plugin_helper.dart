@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:roamcat_flutter/data/channel/app_method_channel.dart';
 import 'package:roamcat_flutter/data/helper/app_data_helper.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
@@ -28,14 +29,14 @@ class AppPluginHelper {
           if (!longPress) {
             AppMethodChannel.openSkyStar();
           }
-        }));
+        }, permissions: [PermissionGroup.locationWhenInUse]));
         list.add(
             AppPlugin(tagBookReader, S.of(context).pluginBookReader, Icons.book,
                 (bool longPress) async {
           if (!longPress) {
             AppMethodChannel.openBookReader();
           }
-        }));
+        }, permissions: [PermissionGroup.storage]));
         list.add(AppPlugin(
             tagPoemReader, S.of(context).pluginPoemReader, Icons.cloud_queue,
             (bool longPress) async {
@@ -98,12 +99,12 @@ class AppPluginHelper {
   }
 }
 
-//todo 申请权限
 class AppPlugin {
   String tag;
   String name;
   IconData icon;
   ValueChanged<bool> onPress;
+  List<PermissionGroup> permissions;
 
-  AppPlugin(this.tag, this.name, this.icon, this.onPress);
+  AppPlugin(this.tag, this.name, this.icon, this.onPress, {this.permissions});
 }
