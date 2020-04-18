@@ -8,6 +8,10 @@ class AppDataHelper {
   static int themeColorIndex = 0;
   static int fontIndex = 0;
 
+  //维护全局NavigatorContext
+  static GlobalKey<NavigatorState> navigatorKey =
+      new GlobalKey<NavigatorState>();
+
   static int nextIndex(List list, int currentIndex) {
     if (currentIndex + 1 >= list.length) {
       return 0;

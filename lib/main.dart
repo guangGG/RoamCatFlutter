@@ -9,6 +9,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:roamcat_flutter/data/bloc/locale_bloc.dart';
 import 'package:roamcat_flutter/data/bloc/theme_bloc.dart';
 import 'package:roamcat_flutter/data/helper/app_constants.dart';
+import 'package:roamcat_flutter/data/helper/app_data_helper.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/view/router.dart';
 
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         S.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
+      navigatorKey: AppDataHelper.navigatorKey,
       onGenerateRoute: Router.generateRoute,
       initialRoute: RouteName.splash,
     );
