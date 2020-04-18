@@ -233,6 +233,15 @@ class S {
       args: [],
     );
   }
+
+  String get pluginBrowser {
+    return Intl.message(
+      'Browser',
+      name: 'pluginBrowser',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

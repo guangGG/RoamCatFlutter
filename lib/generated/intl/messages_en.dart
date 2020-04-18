@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "mainPageName" : MessageLookupByLibrary.simpleMessage("Home"),
     "mainPageTitle" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "openInBrowser" : MessageLookupByLibrary.simpleMessage("Open In Browser"),
+    "pluginBrowser" : MessageLookupByLibrary.simpleMessage("Browser"),
     "reClickExit" : MessageLookupByLibrary.simpleMessage("Click again to exit the application"),
     "reloadPage" : MessageLookupByLibrary.simpleMessage("Reload Page"),
     "splashText" : MessageLookupByLibrary.simpleMessage("RoamCatF"),

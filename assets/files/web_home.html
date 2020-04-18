@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>浏览器</title>
+    <style type="text/css" id='base_style'>
+        ul {
+        list-style-type:none;
+        padding:0px;
+        margin:0px;
+        }
+        ul li {
+        padding:0px;
+        margin-top:6px;
+        margin-bottom:6px;
+        }
+        a {
+        padding-left:5px;
+        padding-right:5px;
+        }
+    </style>
+    <script type="text/javascript">
+        window["onGetAppInfo"] = function(data) {
+            //console.log("AppInfo-" + data)
+        }
+        // 页面加载完成后调用此方法
+        document.addEventListener("DOMContentLoaded", function() {
+            var obj = {
+                "method":"getAppInfo"
+            }
+            window.RoamcatFlutterJsObj.postMessage(JSON.stringify(obj))
+        }, false);
+    </script>
+</head>
+<body>
+<div id="main">
+    <ul>
+        <li style="margin-top:16px">
+            门户网站：
+        </li>
+        <li>
+            <a href="http://m.baidu.com">百度</a>
+            <a href="http://sina.cn">新浪</a>
+            <a href="http://3g.qq.com">腾讯</a>
+            <a href="http://3g.163.com">网易</a>
+            <a href="http://m.sohu.com">搜狐</a>
+            <a href="http://www.google.com">谷歌</a>
+        </li>
+        <li style="margin-top:16px">
+            社区网站：
+        </li>
+        <li>
+            <a href="http://3g.tianya.cn">天涯</a>
+            <a href="http://3g.mop.com">猫扑</a>
+            <a href="http://m.douban.com">豆瓣</a>
+            <a href="http://m.zhihu.com">知乎</a>
+            <a href="http://m.qidian.com">起点</a>
+            <a href="http://tieba.baidu.com">贴吧</a>
+        </li>
+        <li style="margin-top:16px">
+            知识网站：
+        </li>
+        <li>
+            <a href="https://baike.baidu.com">百度百科</a>
+            <a href="http://m.baike.com">互动百科</a>
+            <a href="https://www.kepuchina.cn/m/">科普中国</a>
+            <a href="http://poem.ehorizon.top/page/phone">诗文阅读</a>
+        </li>
+        <li>
+            <a href="http://m.gushiwen.org">古诗文网</a>
+            <a href="http://m.shicimingju.com">诗词名句网</a>
+            <a href="http://m.guokr.com">果壳</a>
+            <a href="http://songshuhui.net">松鼠会</a>
+        </li>
+        <li>
+            <a href="http://www.astron.ac.cn/wap">天文科普</a>
+            <a href="http://m.ngchina.com.cn">地理中文网</a>
+            <a href="http://www.dili360.com/">国家地理</a>
+            <a href="https://www.nasa.gov/">NASA</a>
+        </li>
+        <li style="margin-top:16px">
+            常用网站：
+        </li>
+        <li>
+            <a href="http://m.toutiao.com">头条</a>
+            <a href="http://www.doyouhike.net">磨房</a>
+            <a href="http://m.zol.com.cn">中关村</a>
+            <a href="http://m.laifudao.com">来福岛</a>
+            <a href="http://m.huxiu.com">虎嗅</a>
+        </li>
+        <li>
+            <a href="http://i.meituan.com">美团</a>
+            <a href="http://m.58.com/sz">58同城</a>
+            <a href="http://m.taobao.com">淘宝</a>
+            <a href="https://m.jd.com">京东</a>
+            <a href="http://m.ctrip.com">携程</a>
+        </li>
+        <li>
+            <a href="http://m.dianping.com">大众点评</a>
+            <a href="https://m.weibo.cn">微博</a>
+            <a href="https://www.youku.com">优酷</a>
+            <a href="https://m.iqiyi.com">爱奇艺</a>
+            <a href="https://m.mafengwo.cn">马蜂窝</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

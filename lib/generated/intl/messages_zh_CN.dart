@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "mainPageName" : MessageLookupByLibrary.simpleMessage("主页"),
     "mainPageTitle" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "openInBrowser" : MessageLookupByLibrary.simpleMessage("浏览器中打开"),
+    "pluginBrowser" : MessageLookupByLibrary.simpleMessage("浏览器"),
     "reClickExit" : MessageLookupByLibrary.simpleMessage("再次点击退出应用"),
     "reloadPage" : MessageLookupByLibrary.simpleMessage("刷新页面"),
     "splashText" : MessageLookupByLibrary.simpleMessage("RoamCatF"),

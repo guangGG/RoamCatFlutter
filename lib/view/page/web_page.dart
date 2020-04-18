@@ -130,7 +130,7 @@ class _WebPageState extends State<WebPage> {
       },
       //页面开始加载回调
       onPageStarted: (url) {
-        LogUtil.log("$tag onPageStarted : $url");
+        LogUtil.log("$tag onPageStarted : ${_logUrlStr(url)}");
         setState(() {
           _url = url;
           _isPageFinish = false;
@@ -138,7 +138,7 @@ class _WebPageState extends State<WebPage> {
       },
       //页面加载完成回调
       onPageFinished: (url) {
-        LogUtil.log("$tag onPageFinished : $url");
+        LogUtil.log("$tag onPageFinished : ${_logUrlStr(url)}");
         setState(() {
           _url = url;
           _isPageFinish = true;
@@ -150,7 +150,7 @@ class _WebPageState extends State<WebPage> {
           _controller?.getTitle(),
         ]).then((results) {
           LogUtil.log(
-              "$tag title=${results[3]},url=${results[0]}, canGoBack=${results[1]},canGoForward=${results[2]}");
+              "$tag title=${results[3]},url=${_logUrlStr(results[0])}, canGoBack=${results[1]},canGoForward=${results[2]}");
           if (results[3] != null && results[3].toString().isNotEmpty) {
             setState(() {
               _title = results[3];
@@ -174,7 +174,7 @@ class _WebPageState extends State<WebPage> {
         try {
           var methodData = json.decode(message.message);
           LogUtil.log(
-              "$tag _globalJavascriptChannel msg = ${message.message} \ncall-url:$_url");
+              "$tag _globalJavascriptChannel msg = ${message.message} \ncall-url:${_logUrlStr(_url)}");
           switch (methodData['method']) {
             case "getAppInfo":
               var packageInfo = await PackageInfo.fromPlatform();
@@ -192,5 +192,12 @@ class _WebPageState extends State<WebPage> {
         }
       },
     );
+  }
+
+  String _logUrlStr(String url) {
+    if (url != null) {
+      return url.startsWith("http") ? url : "data:text/html";
+    }
+    return "null";
   }
 }
