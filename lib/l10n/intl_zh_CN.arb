@@ -1,0 +1,13 @@
+{
+  "appName": "RoamCatF",
+  "splashText": "RoamCatF",
+  "mainPageTitle": "RoamCatF",
+  "mainPageName": "主页",
+  "hotTabTitle": "便捷操作",
+  "hotTabName": "便捷操作",
+  "reClickExit": "再次点击退出应用",
+  "urlEmptyTips": "Url不能为空",
+  "openInBrowser": "浏览器中打开",
+  "reloadPage": "刷新页面",
+  "closePage": "关闭页面"
+}

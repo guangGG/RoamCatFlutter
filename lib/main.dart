@@ -9,6 +9,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:roamcat_flutter/data/bloc/locale_bloc.dart';
 import 'package:roamcat_flutter/data/bloc/theme_bloc.dart';
 import 'package:roamcat_flutter/data/helper/app_constants.dart';
+import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/view/router.dart';
 
 //应用flutter代码main方法-入口函数
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // title: 安卓上为应用任务名(任务视图时应用显示的名称)，iOS上未使用
       // App域下的context不能用于国际化工具类S.of(context)
-      title: 'RoamCatFlutter',
+      title: 'RoamCatF',
       // 设置应用主题
       theme: _buildThemeData(themeState),
       darkTheme: _buildThemeData(themeState, platformDarkMode: true),
@@ -62,7 +63,9 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         RefreshLocalizations.delegate,
+        S.delegate,
       ],
+      supportedLocales: S.delegate.supportedLocales,
       onGenerateRoute: Router.generateRoute,
       initialRoute: RouteName.splash,
     );

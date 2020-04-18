@@ -1,0 +1,13 @@
+{
+  "appName": "RoamCatF",
+  "splashText": "RoamCatF",
+  "mainPageTitle": "RoamCatF",
+  "mainPageName": "Home",
+  "hotTabTitle": "HotAction",
+  "hotTabName": "HotAction",
+  "reClickExit": "Click again to exit the application",
+  "urlEmptyTips": "Url cannot be empty",
+  "openInBrowser": "Open In Browser",
+  "reloadPage": "Reload Page",
+  "closePage": "Close Page"
+}

@@ -5,6 +5,7 @@ import 'package:roamcat_flutter/data/bloc/locale_bloc.dart';
 import 'package:roamcat_flutter/data/bloc/theme_bloc.dart';
 import 'package:roamcat_flutter/data/helper/app_constants.dart';
 import 'package:roamcat_flutter/data/helper/app_data_helper.dart';
+import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/view/router.dart';
 import 'package:roamcat_flutter/view/widget/no_ripple_scroll_behavior.dart';
 
@@ -44,7 +45,9 @@ class _MainTabPageState extends State<MainTabPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("RoamCatFlutter"),
+        title: Text((_selectedIndex == 1)
+            ? S.of(context).hotTabTitle
+            : S.of(context).mainPageTitle),
         actions: <Widget>[
           PopupMenuButton(
             itemBuilder: (BuildContext context) {
@@ -96,11 +99,11 @@ class _MainTabPageState extends State<MainTabPage> {
       ),
       //抽屉菜单配置(drawerEdgeDragWidth表示手势拉出的触碰宽度，为0表示无法手势拉出)
       drawer: Drawer(
-        semanticLabel: "Drawer",
+        semanticLabel: S.of(context).appName,
         child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: Text("Drawer"),
+            title: Text(S.of(context).appName),
           ),
           body: Center(child: Text("Drawer Content")),
         ),
@@ -137,8 +140,7 @@ class _MainTabPageState extends State<MainTabPage> {
                 DateTime.now().difference(_lastPressed) >
                     Duration(seconds: 2)) {
               _lastPressed = DateTime.now();
-              Fluttertoast.showToast(
-                  msg: "Click again to exit the application");
+              Fluttertoast.showToast(msg: S.of(context).reClickExit);
               return false; //拦截返回键
             }
             return true;
@@ -152,12 +154,12 @@ class _MainTabPageState extends State<MainTabPage> {
           BottomNavigationBarItem(
             icon: _tabImage(0, false),
             activeIcon: _tabImage(0, true),
-            title: Text("Home"),
+            title: Text(S.of(context).mainPageName),
           ),
           BottomNavigationBarItem(
             icon: _tabImage(1, false),
             activeIcon: _tabImage(1, true),
-            title: Text("Mine"),
+            title: Text(S.of(context).hotTabName),
           ),
         ],
         elevation: 5,
@@ -176,7 +178,7 @@ class _MainTabPageState extends State<MainTabPage> {
     if (index == 0) {
       asset = "assets/images/icon_home.png";
     } else {
-      asset = "assets/images/icon_mine.png";
+      asset = "assets/images/icon_face.png";
     }
     var color = active ? Color(0XFF0088FF) : Color(0xff999999);
     return Image.asset(

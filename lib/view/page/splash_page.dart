@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/view/router.dart';
 
 class SplashPage extends StatefulWidget {
@@ -81,7 +82,7 @@ class AnimatedLogo extends AnimatedWidget {
           Icon(Icons.public, size: 60),
           Container(height: 3),
           Text(
-            'RoamCatFlutter',
+            S.of(context).splashText,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,

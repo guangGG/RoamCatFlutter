@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:package_info/package_info.dart';
+import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/util/log_util.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -32,7 +33,7 @@ class _WebPageState extends State<WebPage> {
 
   _WebPageState(this._title, this._url) {
     if (_url == null || _url.isEmpty) {
-      Fluttertoast.showToast(msg: "url cannot be empty");
+      Fluttertoast.showToast(msg: S.of(context).urlEmptyTips);
       Navigator.of(context).pop();
     }
   }
@@ -61,7 +62,7 @@ class _WebPageState extends State<WebPage> {
                 child: ListTile(
                   contentPadding: EdgeInsets.all(0.0),
                   dense: false,
-                  title: Text("Open In Browser"),
+                  title: Text(S.of(context).openInBrowser),
                 ),
               ));
               list.add(PopupMenuItem<WebPopupMenuTag>(
@@ -69,7 +70,7 @@ class _WebPageState extends State<WebPage> {
                 child: ListTile(
                   contentPadding: EdgeInsets.all(0.0),
                   dense: false,
-                  title: Text("Reload Page"),
+                  title: Text(S.of(context).reloadPage),
                 ),
               ));
               list.add(PopupMenuItem<WebPopupMenuTag>(
@@ -77,7 +78,7 @@ class _WebPageState extends State<WebPage> {
                 child: ListTile(
                   contentPadding: EdgeInsets.all(0.0),
                   dense: false,
-                  title: Text("Close Page"),
+                  title: Text(S.of(context).closePage),
                 ),
               ));
               return list;

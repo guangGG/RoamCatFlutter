@@ -106,3 +106,8 @@ flutter:
     - family: happyfont # 站酷 快乐字体  https://fonts.google.com/?selection.family=Noto+Sans+SC&subset=chinese-simplified
       fonts:
         - asset: assets/fonts/ZCOOLKuaiLe-Regular.ttf
+
+
+# 由Plugins中的"Flutter Intl"插件生成
+flutter_intl:
+  enabled: true
