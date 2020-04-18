@@ -22,5 +22,8 @@
   "languageZh": "简体中文",
   "languageEn": "English",
   "exitApp": "Exit App",
-  "pluginBrowser": "Browser"
+  "pluginBrowser": "Browser",
+  "pluginSkyStar": "Star",
+  "pluginBookReader": "Book",
+  "pluginPoemReader": "Poem"
 }

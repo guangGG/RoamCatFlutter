@@ -79,7 +79,11 @@ class AnimatedLogo extends AnimatedWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Icon(Icons.public, size: 80, color: Theme.of(context).accentColor),
+          Image.asset(
+            "assets/images/icon_logo.png",
+            width: 80,
+            height: 80,
+          ),
           Container(height: 3),
           Text(
             S.of(context).splashText,

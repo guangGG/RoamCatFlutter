@@ -22,5 +22,8 @@
   "languageZh": "简体中文",
   "languageEn": "English",
   "exitApp": "退出应用",
-  "pluginBrowser": "浏览器"
+  "pluginBrowser": "浏览器",
+  "pluginSkyStar": "星空",
+  "pluginBookReader": "读书",
+  "pluginPoemReader": "诗文阅读"
 }

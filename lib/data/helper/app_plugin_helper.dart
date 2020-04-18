@@ -1,12 +1,17 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:roamcat_flutter/data/channel/app_method_channel.dart';
 import 'package:roamcat_flutter/data/helper/app_data_helper.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/view/router.dart';
 
 class AppPluginHelper {
+  static const String tagSkyStar = "SkyStar";
+  static const String tagBookReader = "BookReader";
+  static const String tagPoemReader = "PoemReader";
   static const String tagBrowser = "browser";
 
   static List<AppPlugin> pluginList;
@@ -15,6 +20,30 @@ class AppPluginHelper {
     if (pluginList == null) {
       var context = AppDataHelper.navigatorKey.currentState.context;
       List<AppPlugin> list = List();
+      if (Platform.isAndroid) {
+        //使用MethodChannel调用Android原生方法
+        list.add(AppPlugin(
+            tagSkyStar, S.of(context).pluginSkyStar, Icons.brightness_2,
+            (bool longPress) async {
+          if (!longPress) {
+            AppMethodChannel.openSkyStar();
+          }
+        }));
+        list.add(
+            AppPlugin(tagBookReader, S.of(context).pluginBookReader, Icons.book,
+                (bool longPress) async {
+          if (!longPress) {
+            AppMethodChannel.openBookReader();
+          }
+        }));
+        list.add(AppPlugin(
+            tagPoemReader, S.of(context).pluginPoemReader, Icons.cloud_queue,
+            (bool longPress) async {
+          if (!longPress) {
+            AppMethodChannel.openPoemReader();
+          }
+        }));
+      }
       list.add(AppPlugin(tagBrowser, S.of(context).pluginBrowser, Icons.public,
           (bool longPress) async {
         if (!longPress) {
@@ -29,7 +58,7 @@ class AppPluginHelper {
           );
         }
       }));
-      //demos
+      // todo demos
       list.add(AppPlugin('tag', 'Plugin', Icons.ac_unit, (tag) {}));
       list.add(AppPlugin('tag', 'Plugin', Icons.access_alarms, (tag) {}));
       list.add(AppPlugin('tag', 'Plugin', Icons.account_balance, (tag) {}));
@@ -37,7 +66,7 @@ class AppPluginHelper {
       list.add(AppPlugin('tag', 'Plugin', Icons.blur_circular, (tag) {}));
       list.add(AppPlugin('tag', 'Plugin', Icons.bug_report, (tag) {}));
       list.add(AppPlugin('tag', 'Plugin', Icons.camera, (tag) {}));
-      list.add(AppPlugin('tag', 'Plugin', Icons.cloud_queue, (tag) {}));
+      list.add(AppPlugin('tag', 'Plugin', Icons.camera_roll, (tag) {}));
       list.add(AppPlugin('tag', 'Plugin', Icons.delete_outline, (tag) {}));
       list.add(AppPlugin('tag', 'Plugin', Icons.directions_bike, (tag) {}));
       list.add(AppPlugin('tag', 'Plugin', Icons.directions_car, (tag) {}));
@@ -69,6 +98,7 @@ class AppPluginHelper {
   }
 }
 
+//todo 申请权限
 class AppPlugin {
   String tag;
   String name;

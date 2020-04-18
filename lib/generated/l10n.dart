@@ -242,6 +242,33 @@ class S {
       args: [],
     );
   }
+
+  String get pluginSkyStar {
+    return Intl.message(
+      'Star',
+      name: 'pluginSkyStar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get pluginBookReader {
+    return Intl.message(
+      'Book',
+      name: 'pluginBookReader',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get pluginPoemReader {
+    return Intl.message(
+      'Poem',
+      name: 'pluginPoemReader',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
