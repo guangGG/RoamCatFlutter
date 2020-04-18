@@ -164,7 +164,7 @@ class _MainTabPageState extends State<MainTabPage> {
         ],
         elevation: 5,
         unselectedItemColor: Color(0xff999999),
-        selectedItemColor: Color(0XFF0088FF),
+        selectedItemColor: Theme.of(context).accentColor,
         currentIndex: _selectedIndex,
         onTap: (index) {
           _pageController.jumpToPage(index);
@@ -180,7 +180,7 @@ class _MainTabPageState extends State<MainTabPage> {
     } else {
       asset = "assets/images/icon_face.png";
     }
-    var color = active ? Color(0XFF0088FF) : Color(0xff999999);
+    var color = active ? Theme.of(context).accentColor : Color(0xff999999);
     return Image.asset(
       asset,
       width: 25,

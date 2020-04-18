@@ -79,11 +79,12 @@ class AnimatedLogo extends AnimatedWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Icon(Icons.public, size: 60),
+          Icon(Icons.public, size: 80, color: Theme.of(context).accentColor),
           Container(height: 3),
           Text(
             S.of(context).splashText,
             style: TextStyle(
+              color: Theme.of(context).accentColor,
               fontSize: 20,
               fontWeight: FontWeight.bold,
               //设置字体样式，传在pubspec.yaml配置的fonts-family对应的字符串
