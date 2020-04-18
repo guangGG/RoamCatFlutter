@@ -40,7 +40,7 @@ class _MainTabHomeState extends State<MainTabHome> {
                   Icon(_pluginList[index].icon,
                       size: 30, color: Theme.of(context).accentColor),
                   Container(height: 5),
-                  Text(_pluginList[index].name,
+                  Text(_pluginList[index].name(context),
                       style: TextStyle(color: Theme.of(context).accentColor)),
                 ],
               ),
