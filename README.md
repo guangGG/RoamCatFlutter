@@ -14,7 +14,7 @@ build apk: `flutter build apk`
 
 screenshot home|screenshot menu
 :-:|:-:
-<img src="assets/app_screenshot_home.png" alt="app screenshot" width="360" height="780" />|<img src="assets/app_screenshot_menu.png" alt="app screenshot" width="360" height="780" />
+<img src="assets/app_screenshot_home.jpg" alt="app screenshot" width="360" height="780" />|<img src="assets/app_screenshot_menu.jpg" alt="app screenshot" width="360" height="780" />
 
 <div align="center">
 -- End --
