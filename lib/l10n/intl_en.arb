@@ -29,6 +29,8 @@
   "dealOpt": "DealOption",
   "exitApp": "Exit App",
   "noPermissionTips": "This feature requires permission to be granted before it can be used",
+  "copyUrl": "Copy page url",
+  "copySuccess": "Copy success",
   "pluginTag": "Plugin",
   "pluginBrowser": "Browser",
   "android_item_skystar": "Sky",

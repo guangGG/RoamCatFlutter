@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:package_info/package_info.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
@@ -22,7 +23,7 @@ class WebPage extends StatefulWidget {
   WebPage(this.url, {Key key, this.title});
 }
 
-enum WebPopupMenuTag { browser, reload, close }
+enum WebPopupMenuTag { browser, copyUrl, reload, close }
 
 class _WebPageState extends State<WebPage> {
   static const String tag = "WebPage";
@@ -53,6 +54,11 @@ class _WebPageState extends State<WebPage> {
                 launch(_url);
               } else if (tag == WebPopupMenuTag.close) {
                 Navigator.of(context).pop();
+              } else if (tag == WebPopupMenuTag.copyUrl) {
+                _controller?.currentUrl()?.then((url) {
+                  Clipboard.setData(ClipboardData(text: url));
+                  Fluttertoast.showToast(msg: S.of(context).copySuccess);
+                });
               }
             },
             itemBuilder: (context) {
@@ -63,6 +69,14 @@ class _WebPageState extends State<WebPage> {
                   contentPadding: EdgeInsets.all(0.0),
                   dense: false,
                   title: Text(S.of(context).openInBrowser),
+                ),
+              ));
+              list.add(PopupMenuItem<WebPopupMenuTag>(
+                value: WebPopupMenuTag.copyUrl,
+                child: ListTile(
+                  contentPadding: EdgeInsets.all(0.0),
+                  dense: false,
+                  title: Text(S.of(context).copyUrl),
                 ),
               ));
               list.add(PopupMenuItem<WebPopupMenuTag>(

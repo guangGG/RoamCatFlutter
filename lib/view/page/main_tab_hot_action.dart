@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:package_info/package_info.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/util/isolate_util.dart';
@@ -57,6 +58,7 @@ class _MainTabHotActionState extends State<MainTabHotAction>
               ),
               onTap: () {
                 Clipboard.setData(ClipboardData(text: _showInfo));
+                Fluttertoast.showToast(msg: S.of(context).copySuccess);
               },
             ),
             Container(width: 10),

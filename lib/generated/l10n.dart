@@ -297,6 +297,24 @@ class S {
     );
   }
 
+  String get copyUrl {
+    return Intl.message(
+      'Copy page url',
+      name: 'copyUrl',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get copySuccess {
+    return Intl.message(
+      'Copy success',
+      name: 'copySuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get pluginTag {
     return Intl.message(
       'Plugin',

@@ -53,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "clipboard" : MessageLookupByLibrary.simpleMessage("Clipboard"),
     "closePage" : MessageLookupByLibrary.simpleMessage("Close Page"),
     "copy" : MessageLookupByLibrary.simpleMessage("Copy"),
+    "copySuccess" : MessageLookupByLibrary.simpleMessage("Copy success"),
+    "copyUrl" : MessageLookupByLibrary.simpleMessage("Copy page url"),
     "dealOpt" : MessageLookupByLibrary.simpleMessage("DealOption"),
     "deviceInfo" : MessageLookupByLibrary.simpleMessage("DeviceInfo"),
     "drawerMsg" : MessageLookupByLibrary.simpleMessage("Life is like a river, running forward continuously. The two sides of the river have four different views. On the one hand, we should overcome the resistance and move forward; on the other hand, we should not forget that all kinds of scenery on both sides of the Straits are worth our appreciation and taste."),

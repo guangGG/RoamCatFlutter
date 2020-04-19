@@ -53,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "clipboard" : MessageLookupByLibrary.simpleMessage("剪贴板"),
     "closePage" : MessageLookupByLibrary.simpleMessage("关闭页面"),
     "copy" : MessageLookupByLibrary.simpleMessage("复制"),
+    "copySuccess" : MessageLookupByLibrary.simpleMessage("复制成功"),
+    "copyUrl" : MessageLookupByLibrary.simpleMessage("复制页面链接"),
     "dealOpt" : MessageLookupByLibrary.simpleMessage("耗时操作"),
     "deviceInfo" : MessageLookupByLibrary.simpleMessage("设备信息"),
     "drawerMsg" : MessageLookupByLibrary.simpleMessage("生命如一条河流，淙淙不断地向前奔流。两岸是阴晴寒暑，四时不同的景色。我们一方面要克服阻力，向前奔赴；一方面更不要忘记两岸各种景色都值得我们欣赏与品赏。"),

@@ -29,6 +29,8 @@
   "dealOpt": "耗时操作",
   "exitApp": "退出应用",
   "noPermissionTips": "该功能需要授予相关权限后才能使用",
+  "copyUrl": "复制页面链接",
+  "copySuccess": "复制成功",
   "pluginTag": "插件",
   "pluginBrowser": "浏览器",
   "android_item_skystar": "星空",
