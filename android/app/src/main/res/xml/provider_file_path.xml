@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--共享默认存储卡的文件-->
+    <external-path
+        name="external"
+        path="/" />
+    <!--共享手机上全部的文件，在以后这种方式可能被限制-->
+    <root-path
+        name="root_path"
+        path="." />
+</paths>

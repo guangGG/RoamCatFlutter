@@ -41,6 +41,8 @@ class _MainTabHomeState extends State<MainTabHome> {
                       size: 30, color: Theme.of(context).accentColor),
                   Container(height: 5),
                   Text(_pluginList[index].name(context),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(color: Theme.of(context).accentColor)),
                 ],
               ),

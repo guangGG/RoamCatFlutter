@@ -315,28 +315,235 @@ class S {
     );
   }
 
-  String get pluginSkyStar {
+  String get android_item_skystar {
     return Intl.message(
-      'Star',
-      name: 'pluginSkyStar',
+      'Sky',
+      name: 'android_item_skystar',
       desc: '',
       args: [],
     );
   }
 
-  String get pluginBookReader {
+  String get android_item_reader {
     return Intl.message(
-      'Book',
-      name: 'pluginBookReader',
+      'Reader',
+      name: 'android_item_reader',
       desc: '',
       args: [],
     );
   }
 
-  String get pluginPoemReader {
+  String get android_item_poem {
     return Intl.message(
       'Poem',
-      name: 'pluginPoemReader',
+      name: 'android_item_poem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_webbrowser {
+    return Intl.message(
+      'WebBrowser',
+      name: 'android_item_webbrowser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_apps {
+    return Intl.message(
+      'Applications',
+      name: 'android_item_apps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_note {
+    return Intl.message(
+      'Note',
+      name: 'android_item_note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_private_note {
+    return Intl.message(
+      'PrivateNotes',
+      name: 'android_item_private_note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_file_manager {
+    return Intl.message(
+      'FileManager',
+      name: 'android_item_file_manager',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_music {
+    return Intl.message(
+      'MusicPlayer',
+      name: 'android_item_music',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_gallery {
+    return Intl.message(
+      'Gallery',
+      name: 'android_item_gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_videos {
+    return Intl.message(
+      'Videos',
+      name: 'android_item_videos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_text_viewer {
+    return Intl.message(
+      'TextViewer',
+      name: 'android_item_text_viewer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_image_viewer {
+    return Intl.message(
+      'ImageViewer',
+      name: 'android_item_image_viewer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_file_clear {
+    return Intl.message(
+      'FileCleaner',
+      name: 'android_item_file_clear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_sport_list {
+    return Intl.message(
+      'SportRecord',
+      name: 'android_item_sport_list',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_calendar {
+    return Intl.message(
+      'Calendar',
+      name: 'android_item_calendar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_calculator {
+    return Intl.message(
+      'Calculator',
+      name: 'android_item_calculator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_clipboard {
+    return Intl.message(
+      'Clipboard',
+      name: 'android_item_clipboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_nerve_rabbit {
+    return Intl.message(
+      'NerveRabbit',
+      name: 'android_item_nerve_rabbit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_sudoku {
+    return Intl.message(
+      'Sudoku',
+      name: 'android_item_sudoku',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_drawboard {
+    return Intl.message(
+      'DrawingBoard',
+      name: 'android_item_drawboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_scan {
+    return Intl.message(
+      'ScanCode',
+      name: 'android_item_scan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_video_player {
+    return Intl.message(
+      'VideoPlayer',
+      name: 'android_item_video_player',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_file_selector {
+    return Intl.message(
+      'FileSelector',
+      name: 'android_item_file_selector',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_music_list {
+    return Intl.message(
+      'MusicStore',
+      name: 'android_item_music_list',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get android_item_doraemon_kit {
+    return Intl.message(
+      'Doraemon',
+      name: 'android_item_doraemon_kit',
       desc: '',
       args: [],
     );

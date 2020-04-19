@@ -7,11 +7,12 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
 
-    <!--联网权限-->
+    <!--基础权限，READ_EXTERNAL_STORAGE/WRITE_EXTERNAL_STORAGE 需动态申请-->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--扩展权限，READ_EXTERNAL_STORAGE/WRITE_EXTERNAL_STORAGE/READ_PHONE_STATE/ACCESS_FINE_LOCATION/CAMERA 需动态申请-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--扩展权限，READ_PHONE_STATE/ACCESS_FINE_LOCATION/CAMERA 需动态申请-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -19,13 +20,18 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /><!--Android8.0新特性：安装未知来源应用权限-->
 
     <application
         android:name=".App"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="RoamcatF"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute"
+        tools:replace="android:allowBackup,android:label">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -43,5 +49,16 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!--Android 7.0及以上需要用content://的方式分享文件-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_file_path" />
+        </provider>
     </application>
 </manifest>
