@@ -12,6 +12,9 @@ class AppDataHelper {
   static GlobalKey<NavigatorState> navigatorKey =
       new GlobalKey<NavigatorState>();
 
+  //标记DoraemonKit浮标是否显示
+  static bool showDebugIcon = false;
+
   static int nextIndex(List list, int currentIndex) {
     if (currentIndex + 1 >= list.length) {
       return 0;

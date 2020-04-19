@@ -326,19 +326,8 @@ class AppPluginHelper {
             Icons.phonelink_setup,
             (bool longPress) async {
               if (!longPress) {
-                AppMethodChannel.switchDoraemonKit(true);
-              }
-            },
-          ));
-          list.add(AppPlugin(
-            tagAndroid,
-            (context) {
-              return S.of(context).android_item_doraemon_kit;
-            },
-            Icons.phone_iphone,
-            (bool longPress) async {
-              if (!longPress) {
-                AppMethodChannel.switchDoraemonKit(false);
+                AppDataHelper.showDebugIcon = !AppDataHelper.showDebugIcon;
+                AppMethodChannel.switchDoraemonKit(AppDataHelper.showDebugIcon);
               }
             },
           ));

@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:roamcat_flutter/data/helper/app_data_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -98,6 +102,15 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     sp.setBool("userDarkMode", state.userDarkMode);
     sp.setInt("themeColorIndex", state.themeColorIndex);
     sp.setInt("fontIndex", state.fontIndex);
+    //黑夜模式切换后更新底部导航栏颜色
+    if (Platform.isAndroid) {
+      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        systemNavigationBarColor:
+            state.userDarkMode ? Color(0xFF212121) : Color(0xFFFAFAFA),
+        systemNavigationBarIconBrightness:
+            state.userDarkMode ? Brightness.light : Brightness.dark,
+      ));
+    }
   }
 
   //从SharedPreferences中初始化ThemeState
