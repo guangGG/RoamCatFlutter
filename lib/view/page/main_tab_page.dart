@@ -201,7 +201,11 @@ class _MainTabPageState extends State<MainTabPage> {
           subtitle: Container(
             margin: EdgeInsets.only(top: 10),
             child: GridView.builder(
+              //shrinkWrap为true表示适配子Widget的尺寸
               shrinkWrap: true,
+              //设置primary=false或设置NeverScrollableScrollPhysics，表示不处理当前View的Scroll事件
+              primary: false,
+              //physics: NeverScrollableScrollPhysics(),
               gridDelegate:
                   SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
               itemCount: AppConstants.colorValueList.length,
