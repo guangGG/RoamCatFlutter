@@ -38,6 +38,8 @@ dependencies:
   package_info: ^0.4.0+14
   # 使用系统方式打开链接
   url_launcher: ^5.4.2
+  # 获取应用目录路径
+  path_provider: ^1.6.7
 
   # 网络库
   dio: ^3.0.8

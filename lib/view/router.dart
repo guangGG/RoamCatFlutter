@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:roamcat_flutter/util/log_util.dart';
+import 'package:roamcat_flutter/view/page/about_page.dart';
+import 'package:roamcat_flutter/view/page/clipboard_page.dart';
 import 'package:roamcat_flutter/view/page/main_tab_page.dart';
 import 'package:roamcat_flutter/view/page/splash_page.dart';
 import 'package:roamcat_flutter/view/page/web_page.dart';
@@ -9,6 +11,8 @@ class RouteName {
   static const String splash = 'splash';
   static const String mainTab = 'mainTab';
   static const String webPage = 'webPage';
+  static const String aboutPage = 'aboutPage';
+  static const String clipboardPage = 'clipboardPage';
 }
 
 //MaterialPageRoute 材料设计样式路由(上下快速滑入滑出)
@@ -29,6 +33,10 @@ class Router {
         var title = (args is Map) ? args['title'] : null;
         var url = (args is Map) ? args['url'] : null;
         return CupertinoPageRoute(builder: (_) => WebPage(url, title: title));
+      case RouteName.aboutPage:
+        return CupertinoPageRoute(builder: (_) => AboutPage());
+      case RouteName.clipboardPage:
+        return CupertinoPageRoute(builder: (_) => ClipboardPage());
       default:
         return CupertinoPageRoute(
           builder: (_) => Scaffold(

@@ -8,6 +8,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:package_info/package_info.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
 import 'package:roamcat_flutter/util/isolate_util.dart';
+import 'package:roamcat_flutter/view/dialog/progress_dialog.dart';
+import 'package:roamcat_flutter/view/router.dart';
 
 class MainTabHotAction extends StatefulWidget {
   @override
@@ -42,14 +44,15 @@ class _MainTabHotActionState extends State<MainTabHotAction>
           child: Row(children: <Widget>[
             Container(width: 10),
             Expanded(child: Text(S.of(context).showInfo)),
-            //todo 剪贴板
-            /*InkWell(
+            InkWell(
               child: Text(
                 S.of(context).clipboard,
                 style: TextStyle(color: Theme.of(context).accentColor),
               ),
-              onTap: () {},
-            ),*/
+              onTap: () {
+                Navigator.of(context).pushNamed(RouteName.clipboardPage);
+              },
+            ),
             Container(width: 10),
             InkWell(
               child: Text(
@@ -129,10 +132,12 @@ class _MainTabHotActionState extends State<MainTabHotAction>
     int num1 = 20;
     int num2 = 123456789;
     //在io线程处理耗时操作
-    var future1 = IsolateUtil.execute(_factorial, num1);
-    var future2 = IsolateUtil.execute(_cumulative, num2);
+    var future1 = IsolateUtil.computeFun(_factorial, num1);
+    var future2 = IsolateUtil.computeFun(_cumulative, num2);
     //合并执行多个异步操作
+    ProgressDialog.show(context, msg: S.of(context).loading);
     var result = await Future.wait([future1, future2]);
+    ProgressDialog.dismiss();
     int value1 = result[0];
     int value2 = result[1];
     _showInfo =

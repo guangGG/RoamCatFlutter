@@ -27,6 +27,7 @@ Some Flutter Blog:
 - [Flutter 开发踩坑记录](https://juejin.im/post/5e58ceadf265da575918dd14)
 - [深入理解BuildContext](https://juejin.im/post/5c665cb651882562914ec153)
 - [深入理解Flutter Platform Channel](https://juejin.im/post/5b84ff6a6fb9a019f47d1cc9)
+- [FunFlutter系列之国际化Intl方案](https://juejin.im/post/5e4536d0e51d4526ef5f85a9)
 - [flutter笔记](http://tblog.ehorizon.top/2020/03/09/20200309/)
 
 <div align="center">

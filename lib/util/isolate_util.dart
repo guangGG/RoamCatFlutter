@@ -1,9 +1,16 @@
 import 'dart:isolate';
 
+import 'package:flutter/foundation.dart';
+
 typedef IsolateDealFunction = dynamic Function(dynamic);
 
 //flutter中文网-异步UI： https://flutterchina.club/flutter-for-android/#%E5%BC%82%E6%AD%A5ui
 class IsolateUtil {
+  ///子线程中使用指定方法处理数据(注：func必须为静态方法)，内置方法，效果同下面[execute]方法
+  static Future<dynamic> computeFun(ComputeCallback func, dynamic data) async {
+    return compute(func, data);
+  }
+
   ///子线程处理数据，并用异步方式回传返回值(注：func必须为静态方法)
   static Future<dynamic> execute(IsolateDealFunction func, dynamic data) async {
     //1.主线程创建一个ReceivePort(ReceivePort本质是Stream)

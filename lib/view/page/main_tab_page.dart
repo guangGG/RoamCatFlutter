@@ -286,11 +286,7 @@ class _MainTabPageState extends State<MainTabPage> {
           title: Text(S.of(context).aboutUs),
           trailing: Icon(Icons.arrow_forward_ios, size: 16),
           onTap: () {
-            //内置WebView打开url
-            Navigator.of(context).pushNamed(
-              RouteName.webPage,
-              arguments: {'url': 'https://github.com/guangGG/RoamCatFlutter'},
-            );
+            Navigator.of(context).pushNamed(RouteName.aboutPage);
           },
         ),
         Container(height: 15),

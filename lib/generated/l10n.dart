@@ -144,6 +144,33 @@ class S {
     );
   }
 
+  String versionShow(Object name, Object code) {
+    return Intl.message(
+      'Version:$name($code)',
+      name: 'versionShow',
+      desc: '',
+      args: [name, code],
+    );
+  }
+
+  String get sourceCode {
+    return Intl.message(
+      'Source code',
+      name: 'sourceCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get appRoamCatX {
+    return Intl.message(
+      'RoamCatX APP',
+      name: 'appRoamCatX',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get blackTheme {
     return Intl.message(
       'Dark mode',
@@ -256,6 +283,24 @@ class S {
     return Intl.message(
       'Paste',
       name: 'paste',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get refresh {
+    return Intl.message(
+      'Refresh',
+      name: 'refresh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get loading {
+    return Intl.message(
+      'loading...',
+      name: 'loading',
       desc: '',
       args: [],
     );

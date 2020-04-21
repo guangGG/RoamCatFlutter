@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(name, code) => "Version:${name}(${code})";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "aboutUs" : MessageLookupByLibrary.simpleMessage("About Us"),
@@ -49,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "android_item_videos" : MessageLookupByLibrary.simpleMessage("Videos"),
     "android_item_webbrowser" : MessageLookupByLibrary.simpleMessage("WebBrowser"),
     "appName" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
+    "appRoamCatX" : MessageLookupByLibrary.simpleMessage("RoamCatX APP"),
     "blackTheme" : MessageLookupByLibrary.simpleMessage("Dark mode"),
     "clipboard" : MessageLookupByLibrary.simpleMessage("Clipboard"),
     "closePage" : MessageLookupByLibrary.simpleMessage("Close Page"),
@@ -66,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "languageEn" : MessageLookupByLibrary.simpleMessage("English"),
     "languageNone" : MessageLookupByLibrary.simpleMessage("System"),
     "languageZh" : MessageLookupByLibrary.simpleMessage("简体中文"),
+    "loading" : MessageLookupByLibrary.simpleMessage("loading..."),
     "mainPageName" : MessageLookupByLibrary.simpleMessage("Home"),
     "mainPageTitle" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "noPermissionTips" : MessageLookupByLibrary.simpleMessage("This feature requires permission to be granted before it can be used"),
@@ -74,12 +78,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "pluginBrowser" : MessageLookupByLibrary.simpleMessage("Browser"),
     "pluginTag" : MessageLookupByLibrary.simpleMessage("Plugin"),
     "reClickExit" : MessageLookupByLibrary.simpleMessage("Click again to exit the application"),
+    "refresh" : MessageLookupByLibrary.simpleMessage("Refresh"),
     "reloadPage" : MessageLookupByLibrary.simpleMessage("Reload Page"),
     "showInfo" : MessageLookupByLibrary.simpleMessage("Info"),
+    "sourceCode" : MessageLookupByLibrary.simpleMessage("Source code"),
     "splashText" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "switchFont" : MessageLookupByLibrary.simpleMessage("Text Font"),
     "switchLanguage" : MessageLookupByLibrary.simpleMessage("Language"),
     "switchThemeColor" : MessageLookupByLibrary.simpleMessage("Theme color"),
-    "urlEmptyTips" : MessageLookupByLibrary.simpleMessage("Url cannot be empty")
+    "urlEmptyTips" : MessageLookupByLibrary.simpleMessage("Url cannot be empty"),
+    "versionShow" : m0
   };
 }

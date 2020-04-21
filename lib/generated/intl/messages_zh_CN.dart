@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'zh_CN';
 
+  static m0(name, code) => "版本：${name}(${code})";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "aboutUs" : MessageLookupByLibrary.simpleMessage("关于我们"),
@@ -49,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "android_item_videos" : MessageLookupByLibrary.simpleMessage("视频库"),
     "android_item_webbrowser" : MessageLookupByLibrary.simpleMessage("浏览器"),
     "appName" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
+    "appRoamCatX" : MessageLookupByLibrary.simpleMessage("RoamCatX 应用"),
     "blackTheme" : MessageLookupByLibrary.simpleMessage("黑夜模式"),
     "clipboard" : MessageLookupByLibrary.simpleMessage("剪贴板"),
     "closePage" : MessageLookupByLibrary.simpleMessage("关闭页面"),
@@ -66,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "languageEn" : MessageLookupByLibrary.simpleMessage("English"),
     "languageNone" : MessageLookupByLibrary.simpleMessage("跟随系统"),
     "languageZh" : MessageLookupByLibrary.simpleMessage("简体中文"),
+    "loading" : MessageLookupByLibrary.simpleMessage("加载中…"),
     "mainPageName" : MessageLookupByLibrary.simpleMessage("首页"),
     "mainPageTitle" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "noPermissionTips" : MessageLookupByLibrary.simpleMessage("该功能需要授予相关权限后才能使用"),
@@ -74,12 +78,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "pluginBrowser" : MessageLookupByLibrary.simpleMessage("浏览器"),
     "pluginTag" : MessageLookupByLibrary.simpleMessage("插件"),
     "reClickExit" : MessageLookupByLibrary.simpleMessage("再次点击退出应用"),
+    "refresh" : MessageLookupByLibrary.simpleMessage("刷新"),
     "reloadPage" : MessageLookupByLibrary.simpleMessage("刷新页面"),
     "showInfo" : MessageLookupByLibrary.simpleMessage("信息"),
+    "sourceCode" : MessageLookupByLibrary.simpleMessage("应用源码"),
     "splashText" : MessageLookupByLibrary.simpleMessage("RoamCatF"),
     "switchFont" : MessageLookupByLibrary.simpleMessage("切换字体"),
     "switchLanguage" : MessageLookupByLibrary.simpleMessage("切换语言"),
     "switchThemeColor" : MessageLookupByLibrary.simpleMessage("切换主题颜色"),
-    "urlEmptyTips" : MessageLookupByLibrary.simpleMessage("Url不能为空")
+    "urlEmptyTips" : MessageLookupByLibrary.simpleMessage("Url不能为空"),
+    "versionShow" : m0
   };
 }
