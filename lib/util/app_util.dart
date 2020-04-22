@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:package_info/package_info.dart';
@@ -39,6 +40,16 @@ class AppUtil {
   ///判断当前网络是否连接状态
   static Future<bool> isNetConn() async {
     return (await checkNetConnectivity()) != ConnectivityResult.none;
+  }
+
+  ///写入数据到剪贴板
+  static Future<void> putTextToClipboard(String text) async {
+    return Clipboard.setData(ClipboardData(text: text));
+  }
+
+  ///读取剪贴板数据
+  static Future<String> getClipboardText() async {
+    return (await Clipboard.getData("text/plain")).text;
   }
 
   ///Toast提示

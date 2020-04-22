@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:roamcat_flutter/generated/l10n.dart';
+import 'package:roamcat_flutter/util/app_util.dart';
 import 'package:roamcat_flutter/view/widget/no_ripple_scroll_behavior.dart';
 
 class ClipboardPage extends StatefulWidget {
@@ -20,9 +20,9 @@ class _ClipboardPageState extends State<ClipboardPage> {
   }
 
   void updateText() {
-    Clipboard.getData('text/plain').then((ClipboardData data) {
+    AppUtil.getClipboardText().then((String data) {
       setState(() {
-        _text = data.text;
+        _text = data;
       });
     });
   }
@@ -47,9 +47,7 @@ class _ClipboardPageState extends State<ClipboardPage> {
       ),
       body: buildNoRippleScrollWidget(Container(
         margin: EdgeInsets.all(10),
-        child: Expanded(
-          child: ListView(children: <Widget>[SelectableText(_text)]),
-        ),
+        child: ListView(children: <Widget>[SelectableText(_text)]),
       )),
     );
   }
